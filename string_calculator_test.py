@@ -26,7 +26,7 @@ def test_add_new_line_character():
 def test_add_diff_delimeters():
 	# it should test different delimeters in string
     print("Testing different delimeters in string")
-    assert string_calculator.add("//;\n1;2") == 6
+    assert string_calculator.add("//;\n1;2") == 3
 
 test_empty_string()
 test_add_two_numbers()
