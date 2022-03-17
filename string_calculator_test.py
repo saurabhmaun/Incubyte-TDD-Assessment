@@ -28,8 +28,15 @@ def test_add_diff_delimeters():
     print("Testing different delimeters in string")
     assert string_calculator.add("//;\n1;2") == 3
 
+def test_negative_numbers():
+	# it should raise an exception containing all negative numbers if any are found
+    print("Testing negetive numbers in string")
+    with pytest.raises(Exception, match = r'negatives not allowed \[-1, -2, -3\]'):
+        string_calculator.add('-1, -2, -3, 1, 2, 3')
+
 test_empty_string()
 test_add_two_numbers()
 test_add_multiple_numbers()
 test_add_new_line_character()
 test_add_diff_delimeters()
+test_negative_numbers()
