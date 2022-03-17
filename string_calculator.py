@@ -1,4 +1,12 @@
 # string_calculator.py
 
-def add(number_string):
-    if number_string == '': return 0
+import re
+
+def add(numbers):
+    if numbers == '': return 0
+
+    numbers = map(int, re.findall(r"-?\d+", numbers))
+    numbers = filter(lambda x: x < 1000, numbers)
+    
+    # return the sum
+    return sum(numbers)
